@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-exasol" %}
-{% set version = "4.2.5" %}
+{% set version = "4.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-exasol-{{ version }}.tar.gz
-  sha256: ff35c14e6dfba6a8ccf5181369e2304ad4883ec9d6827c33137971bb8013b944
+  sha256: ccc93ac4541bec4002b1c4bace5e297564835541f544d8848fd26578b06338e6
 
 build:
   noarch: python
