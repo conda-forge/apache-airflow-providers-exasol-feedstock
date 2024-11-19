@@ -1,13 +1,13 @@
 {% set name = "apache-airflow-providers-exasol" %}
-{% set version = "4.6.0" %}
+{% set version = "4.6.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_exasol-{{ version }}.tar.gz
-  sha256: f29c653998d7bc4fd931cc045059022c401bd81f9f1e81fb75779b604d74cf26
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_exasol-{{ version }}.tar.gz
+  sha256: 07392e31c9c522fffb083eec7d5a04fc2af687358c49b80a41bd0a702eddd642
 
 build:
   noarch: python
@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<4.dev0
-    - flit-core >=3.2,<4
+    - python {{ python_min }}
+    - flit-core ==3.10.1
     - pip
   run:
-    - python >=3.8,<4.dev0
-    - apache-airflow-providers-common-sql >=1.14.1
+    - python >={{ python_min }}
+    - apache-airflow-providers-common-sql >=1.20.0
     - apache-airflow >=2.8.0
     # # the more restrictive constraint to stay noarch: python
     # https://github.com/apache/airflow/blob/providers-exasol/{{ version }}/generated/provider_dependencies.json
@@ -34,6 +34,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
