@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-exasol" %}
-{% set version = "4.6.1" %}
+{% set version = "4.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_exasol-{{ version }}.tar.gz
-  sha256: 07392e31c9c522fffb083eec7d5a04fc2af687358c49b80a41bd0a702eddd642
+  sha256: 14c7931a7cf2fb0b9fff1534008f62ab57eff5c2070eaf09c9dfb762caa69cdc
 
 build:
   noarch: python
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - apache-airflow-providers-common-sql >=1.20.0
-    - apache-airflow >=2.8.0
+    - apache-airflow >=2.9.0
     # # the more restrictive constraint to stay noarch: python
     # https://github.com/apache/airflow/blob/providers-exasol/{{ version }}/generated/provider_dependencies.json
     - pandas >=2.1.2,<2.2
