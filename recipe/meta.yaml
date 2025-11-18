@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-exasol" %}
-{% set version = "4.8.3" %}
-{% set python_min = "3.10" %}
+{% set version = "4.8.4" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_exasol-{{ version }}.tar.gz
-  sha256: b8a104d9fcebfd51ac78f213bb1bb027046bbece89409dc6e65195050796eef8
+  sha256: d739848d0ac04d5e72578937ad7843b29f1d774ce1cf3566bc03531852ec76fa
 
 build:
   noarch: python
@@ -25,9 +24,8 @@ requirements:
     - apache-airflow >=2.10.0
     - apache-airflow-providers-common-sql >=1.26.0
     - pyexasol >=0.26.0
-    # # the more restrictive constraint to stay noarch: python
-    # https://github.com/apache/airflow/blob/providers-exasol/{{ version }}/generated/provider_dependencies.json
-    - pandas >=2.1.2
+    # more restrictive for python >=3.13
+    - pandas >=2.2.3
 
 test:
   imports:
@@ -42,8 +40,10 @@ about:
   home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-exasol for Apache Airflow
   license: Apache-2.0
+  license_file:
+    - LICENSE
+    - NOTICE
   license_family: Apache
-  license_file: src/airflow/providers/exasol/LICENSE
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-exasol/stable/index.html
   dev_url: https://github.com/apache/airflow/
 
