@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-exasol" %}
-{% set version = "4.9.0" %}
+{% set version = "4.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_exasol-{{ version }}.tar.gz
-  sha256: 77af0f8b368024d3cae21743f2b42ad04d4b89d22c7b6ab2940e9935aed3bb40
+  sha256: 0c541fbc4efc034ed37045ce26a4abfee5e72c6b722f1ec0c205c22e06c184d0
 
 build:
   noarch: python
@@ -20,12 +20,13 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
+    - apache-airflow-providers-common-compat >=1.12.0
     - python >={{ python_min }}
     - apache-airflow >=2.11.0
     - apache-airflow-providers-common-sql >=1.26.0
     - pyexasol >=0.26.0
     # more restrictive for python >=3.13
-    - pandas >=2.2.3
+    - pandas >=2.1.2
 
 test:
   imports:
