@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-exasol
-  version: "4.10.0"
+  version: "4.10.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_exasol-${{ version }}.tar.gz
-  sha256: fe0c93b9b7810455d9a592c4d874a8c6a30034daacbe6ed155b39255b46ccc15
+  sha256: 3b0ed93c40fb96a89d4b010747224adaf93885cfe29b5fbade37a092a0adf90c
 
 build:
   noarch: python
@@ -26,8 +26,8 @@ requirements:
     - apache-airflow-providers-common-compat >=1.12.0
     - apache-airflow-providers-common-sql >=1.32.0
     - pyexasol >=0.26.0
-    # more restrictive for python >=3.13
-    - pandas >=2.2.3
+    # more restrictive for python >=3.14
+    - pandas >=2.3.3
 
 tests:
   - python:
