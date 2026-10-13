@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-exasol
-  version: 4.11.0
+  version: 4.11.1
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_exasol-${{ version }}.tar.gz
-  sha256: 09cc22829ca5ddf350dd0bf7ebdeb8f86b3347e3e849c4fb230d15dffa5a9b33
+  sha256: 43b0562b76d561219fd502be7f6770bf53d4e2c72052441fe8d3b3b992276943
 
 build:
   noarch: python
@@ -19,7 +19,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - flit-core ==4.0.2
+    - flit-core ==4.1.0
   run:
     - python >=${{ python_min }}
     - apache-airflow >=2.11.0
